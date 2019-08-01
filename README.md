@@ -6,8 +6,9 @@ winston is designed to be a simple and universal logging library with support fo
 
 winston aims to decouple parts of the logging process to make it more flexible and extensible. Attention is given to supporting flexibility in log formatting (see: Formats) & levels (see: Using custom logging levels), and ensuring those APIs decoupled from the implementation of transport logging (i.e. how the logs are stored / indexed, see: Adding Custom Transports) to the API that they exposed to the programmer.
 
-## How to install winston
-npm install winston
+## Winston
+
+https://www.npmjs.com/package/winston
 
 ## Where I write winston code?
 In the utils/logger.js
