@@ -11,4 +11,6 @@ npm install winston
 
 
 ## How to run my application
-
+1. Download
+2. npm install
+3. npm start
