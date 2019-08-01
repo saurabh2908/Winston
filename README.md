@@ -9,8 +9,15 @@ winston aims to decouple parts of the logging process to make it more flexible a
 ## How to install winston
 npm install winston
 
+## Where I write winston code?
+In the utils/logger.js
+
+## Where I Maintain Logs?
+
+In the app.log and error.log file(these file crated by winston itself)
 
 ## How to run my application
 1. Download
 2. npm install
 3. npm start
+
