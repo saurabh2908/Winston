@@ -21,3 +21,4 @@ In the app.log and error.log file(these file crated by winston itself)
 2. npm install
 3. npm start
 
+![ScreenShot](Loggers/images/loggerImage.png)
