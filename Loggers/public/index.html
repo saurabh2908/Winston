@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    
+    </style> 
+<body id="id">
+  <h1>Register Page</h1>
+  <fieldset>
+      <legend><strong><h3>Register</h3></strong></legend>
+      <input  id="Regname" name='userid' type="text" placeholder="Type Userid Here">
+      <input  id="Regpwd"  name='pwd' type="password" placeholder="Type Password Here">
+      <button onclick="logSubmit()" type='submit'>Register</button>
+  </fieldset>
+      
+    
+</body>
+<script>
+var RegName=document.querySelector("#Regname");
+var Regpwd=document.querySelector("#Regpwd");
+
+function logSubmit(){
+  console.log("this is register page")
+  console.log("name is",RegName.value);
+  console.log("pwd is",Regpwd.value)
+  let object={
+    userid:RegName.value,
+    password:Regpwd.value
+  }
+  fetch("/api/register", {
+  method: 'POST', // or 'PUT'
+  body: JSON.stringify(object), // data can be `string` or {object}!
+  headers:{
+    'Content-Type': 'application/json'
+  }
+})
+.then(function(response){
+  if(response){
+    alert("you are registered succesfully Please Login")
+    window.location.href = './login.html'
+  }
+})
+.catch(error => console.error('Error:', error));
+}
+</script>
+</html>

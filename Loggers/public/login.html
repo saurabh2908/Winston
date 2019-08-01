@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+#heading{
+  color: green;
+}
+#field{
+  background-color: rgb(172, 196, 206);
+}
+</style>
+<body>
+  <h1>Login Page</h1>
+  <fieldset id="field">
+      <legend><strong><h3>Login</h3></strong></legend>
+      <input  id="Logname" name='userid' type="text" placeholder="Type Userid Here">
+      <input  id="Logpwd"  name='pwd' type="password" placeholder="Type Password Here">
+      <button onclick="logSubmit()" type='submit'>Login</button>
+  </fieldset>
+       <h1 id="heading"></h1>
+    
+</body>
+<script>
+var logName=document.querySelector("#Logname");
+var logpwd=document.querySelector("#Logpwd");
+
+function logSubmit(){
+ let object={
+  userid:logName.value,
+ password:logpwd.value 
+ }
+    fetch('/api/login',{
+     method:'POST',
+     body:JSON.stringify(object),
+     headers:{
+    'Content-Type': 'application/json'
+  }
+    })
+    .then(res => res.json())
+.then(function(res){
+  console.log('response is',res);
+  if(res){
+    document.querySelector('#heading').innerHTML='WELCOME'+' '+res.doc.userid;
+  }
+})
+.catch(error => console.error('Error:', error));
+}
+</script>
+</html>
