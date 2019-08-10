@@ -1,3 +1,5 @@
+// schema
+
 const connection = require('../connection');
 const Schema = connection.Schema;
 const userSchema = new Schema({
